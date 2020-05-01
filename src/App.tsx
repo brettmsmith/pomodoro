@@ -26,20 +26,14 @@ function App() {
       setIsRunning(true);
   }
 
-  async function playSound() {
-    await audio.play();
-  }
-
   return (
     <div className="App">
         <p>{Math.trunc(time / 60)}:{zeroPad((time % 60), 2)}</p>
-        <button onClick={() => setTime(10)}>Reset</button>
         <button onClick={() => setIsRunning(true)}>Start</button>
         <button onClick={() => setIsRunning(false)}>Stop</button>
         <button onClick={() => setTimerAndStart(60*25)}>Start Pomodoro</button>
         <button onClick={() => setTimerAndStart(60*5)}>Start Short Break</button>
         <button onClick={() => setTimerAndStart(60*15)}>Start Long Break</button>
-        <button onClick={() => playSound()}>Test sound</button>
     </div>
   );
 }
